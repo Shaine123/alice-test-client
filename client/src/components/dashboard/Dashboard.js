@@ -39,19 +39,21 @@ export default function Dashboard() {
         setOpen(false);
     };
 
-    const { currentUser, signInUser, isLoggedIn } = useContext(UserContext);
-    const navigate = useNavigate();
+    //uncomment the line below 
+    
+    // const { currentUser, signInUser, isLoggedIn } = useContext(UserContext);
+    // const navigate = useNavigate();
 
-    useEffect(() => {
-        if (localStorage.getItem("token") != null && localStorage.getItem("currentUser") != null) {
-            let user = JSON.parse(localStorage.getItem("currentUser"));
-            let token = localStorage.getItem("token")
-            signInUser(user, token);
-        }
-        else {
-            navigate("/login");
-        }
-    }, [isLoggedIn]);
+    // useEffect(() => {
+    //     if (localStorage.getItem("token") != null && localStorage.getItem("currentUser") != null) {
+    //         let user = JSON.parse(localStorage.getItem("currentUser"));
+    //         let token = localStorage.getItem("token")
+    //         signInUser(user, token);
+    //     }
+    //     else {
+    //         navigate("/login");
+    //     }
+    // }, [isLoggedIn]);
 
 
 

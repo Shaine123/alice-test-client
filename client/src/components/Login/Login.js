@@ -25,32 +25,36 @@ function Login() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // TODO: Handle login form submission
-        const form = document.forms.loginForm;
-        let user = {
-            email: form.email.value,
-            password: form.password.value
-        }
-        fetch('http://localhost:3001/login', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then(response => response.json())
-            .then(data => {
-                let respMessage = data.message;
-                let user = data.user;
-                if (respMessage === "success") {
-                    signInUser(user, data.token);
-                    navigate("/");
-                }
-                else {
-                    //TODO: display error message
-                    setErrorList(data.errors);
-                    handleDialogueOpen();
-                }
-            });
+        navigate("/"); // delete this line
+        
+        //uncomment the line below
+
+        // const form = document.forms.loginForm;
+        // let user = {
+        //     email: form.email.value,
+        //     password: form.password.value
+        // }
+        // fetch('http://localhost:3001/login', {
+        //     method: "POST",
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(user)
+        // })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         let respMessage = data.message;
+        //         let user = data.user;
+        //         if (respMessage === "success") {
+        //             signInUser(user, data.token);
+        //             navigate("/");
+        //         }
+        //         else {
+        //             //TODO: display error message
+        //             setErrorList(data.errors);
+        //             handleDialogueOpen();
+        //         }
+        //     });
     };
 
     const signUpClicked = () => {

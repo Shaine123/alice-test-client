@@ -56,10 +56,10 @@ import PatientHistory from './components/Patient/PatientHistory';
 const NotFound = () => <h2 style={{margin:'70px'}}>This Path is not available</h2>
 
 function ProtectedAdminRoute({children}) {
-    const {currentUser} = useContext(UserContext);
-    if (currentUser.userType == "Admin") {
-        return children ;
-    }
+    // const {currentUser} = useContext(UserContext);
+    // if (currentUser.userType == "Admin") {
+    //     return children ;
+    // }
 }
 
 function ProtectedStaffRoute({children}) {
@@ -75,13 +75,18 @@ export default function PageRoutes(){
         <Routes>
             <Route path='/' element= {<Dashboard />} >
                 <Route index element= {
-                    currentUser.userType == "Admin"?
-                        <AdminDashboard />:
-                    currentUser.userType == "Doctor"?
-                        <DoctorDashboard />:
-                    currentUser.userType == "Patient"? 
-                        <PatientDashboard />:
-                    <div />} 
+                    <AdminDashboard /> // delete this line
+
+                    //uncomment the line below
+
+                    // currentUser.userType == "Admin"?
+                    //     <AdminDashboard />:
+                    // currentUser.userType == "Doctor"?
+                    //     <DoctorDashboard />:
+                    // currentUser.userType == "Patient"? 
+                    //     <PatientDashboard />:
+                    // <div />
+                } 
                 />
                 <Route path='users' element= { <ProtectedAdminRoute>  <User /> </ProtectedAdminRoute>} >
                     <Route index element= {<UserList />} />
