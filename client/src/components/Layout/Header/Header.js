@@ -11,6 +11,7 @@ import { UserContext } from '../../../Context/UserContext'
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import { Logo } from '../../../assets/img';
 
 const drawerWidth = 240;
 
@@ -54,7 +55,7 @@ const Header = ({ open, handleDrawerOpen, headerTitle }) => {
 
 
   return (
-    <AppBar position="fixed" open={open} style={{ backgroundColor: '#fff', color: "#31b372", boxShadow: "None" }} >
+    <AppBar position="fixed" open={open} style={{ backgroundColor: '#80D0BA', color: "#31b372", boxShadow: "None" }} >
       <Toolbar>
         <IconButton
           color="inherit"
@@ -69,10 +70,11 @@ const Header = ({ open, handleDrawerOpen, headerTitle }) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h4" noWrap component="div" onClick={redirectToHome} sx={{ flexGrow: 1, fontWeight: 'bolder' }} >
-          {/* {headerTitle} */}
-          Aliice
-        </Typography>
+        {/* <Typography variant="h4" noWrap component="div" onClick={redirectToHome} sx={{ flexGrow: 1, fontWeight: 'bolder' }} >
+          {headerTitle}
+           Allice
+        </Typography> */}
+       <img src={Logo}  id = 'logo-img'alt='img' style={{height: '180px', width: '180px', objectFit: 'cover',  position: 'absolute' , top: '-60px',}} />
         {isLoggedIn && (
           <div className={styles.accountIcon}>
             <IconButton
