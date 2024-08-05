@@ -26,7 +26,7 @@ function Login() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // TODO: Handle login form submission
-        navigate("/"); // delete this line
+        navigate("/admin"); // delete this line
         
         //uncomment the line below
 

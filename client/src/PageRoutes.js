@@ -73,7 +73,7 @@ export default function PageRoutes(){
     const {currentUser} = useContext(UserContext);
     return (
         <Routes>
-            <Route path='/' element= {<Dashboard />} >
+            <Route path='/admin' element= {<Dashboard />} >
                 <Route index element= {
                     <AdminDashboard /> // delete this line
 
@@ -146,7 +146,7 @@ export default function PageRoutes(){
                 <Route path='/profile' element= {<DoctorProfile/>} />
 
             </Route>
-            <Route path='/login' element= {<LoginPage />} />
+            <Route path='/' element= {<LoginPage />} />
             <Route path='/signup' element= {<SignupPage />} />
 
 
