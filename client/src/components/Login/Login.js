@@ -3,6 +3,7 @@ import styles from './Login.module.css';
 import { useNavigate } from "react-router-dom";
 import ErrorDialogueBox from '../MUIDialogueBox/ErrorDialogueBox';
 import { UserContext } from '../../Context/UserContext'
+import { Logo } from '../../assets/img';
 
 function Login() {
     const navigate = useNavigate();
@@ -64,6 +65,9 @@ function Login() {
     return (
         <div id={styles.loginBody}>
             <div className={styles.greenLayer1}>
+            <div className='logo-container' style={{height: '400px', width: '400px',  position: 'absolute' , top: '-120px',}}>
+              <img src={Logo}  id = 'logo-img'alt='img' style={{height: '100%', width: '100%', objectFit: 'cover',  position: 'absolute' , top: 0,}} />
+            </div>
                 <div id={styles.loginFormDiv}>
                     <p>Welcome back! Please login to your account</p>
                     <form onSubmit={handleSubmit} className="col-6" name="loginForm" id="loginForm">
